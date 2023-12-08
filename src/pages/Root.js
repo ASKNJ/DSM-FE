@@ -1,18 +1,14 @@
 import { NavLink, Outlet } from 'react-router-dom';
 import classes from '../css/AppDesign.module.css';
-import { useContext, useEffect, useState } from 'react';
+import { useContext, useEffect } from 'react';
 import { FaBell } from "react-icons/fa";
 import { MasterDataContext } from '../context/master-context';
 import { getToken } from '../apiBundle/api';
 
 
 const RootLayout = () => {
-    const [activeLink, setActiveLink] = useState(null);
     const ctx = useContext(MasterDataContext);
     const access_token = ctx.masterData.token;
-    const handleLinkClick = (link) => {
-        setActiveLink(link);
-    };
 
     useEffect(()=>{
         const getFirstTokentoCtx = async()=>{
@@ -22,7 +18,8 @@ const RootLayout = () => {
         if(!access_token){
             getFirstTokentoCtx()
         }
-    },[access_token]);
+    },[// eslint-disable-next-line
+        access_token]);
 
     return (
         <>

@@ -23,6 +23,7 @@ const Dropdown = (props) => {
     useEffect(() => {
         const callApiPerCatgory = async () => {
             if (selectedOption) {
+                try{
                 getCategoryData(null);
                 const catId = options.filter((option, id) => option.category.toLowerCase() === selectedOption.toLowerCase())[0]?.catId;
                 const data = await getCategoryImpactsData(catId, accesstoken);
@@ -33,9 +34,15 @@ const Dropdown = (props) => {
                     alert("Something went wrong!");
                 }
             }
+            catch(err){
+                console.log("There is an error while loading drop down data: ", err);
+                alert("Somethng went wrong while loading impacts")
+            }
+        }
         }
         callApiPerCatgory();
-    }, [selectedOption]);
+    }, [// eslint-disable-next-line
+    selectedOption]);
 
 
     return (

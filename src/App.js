@@ -1,5 +1,4 @@
 import { createBrowserRouter, createRoutesFromElements, RouterProvider, Route } from 'react-router-dom';
-import logo from './logo.svg';
 import './App.css';
 import RootLayout from './pages/Root';
 import HomePage from './pages/Home';

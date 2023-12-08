@@ -1,0 +1,36 @@
+.overlay-container {
+    display: flex;
+    flex-direction: column;
+    flex: 0;
+    margin-bottom: 20px;
+    padding: 20px;
+    background-color: var(--plane);
+    box-shadow: -1px -1px 8px 3px rgba(119, 119, 119, 1);
+}
+
+.x-axis-container {
+    display: flex;
+    width: 100%;
+    align-items: center;
+    padding-top: 8px;
+}
+
+.x-axis-text {
+    font-size: 13px;
+}
+
+.text-bold{
+    font-weight: bolder;
+    font-size: 18px;
+}
+
+.text-bold-huge{
+    font-weight: bolder;
+    font-size: 24px;
+}
+
+.text-container {
+    flex: 1;
+    padding: 10px;
+  }
+  
